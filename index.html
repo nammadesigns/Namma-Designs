@@ -28,6 +28,7 @@
             color: #FFC700;
             font-weight: 600;
         }
+
         /* Animation Styles */
         .animate-on-scroll {
             opacity: 0;
@@ -55,15 +56,11 @@
     <!-- Header -->
     <header class="bg-white sticky top-0 z-50 shadow-md">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-3">
+            <a href="#" id="logo-link" class="flex items-center space-x-3 cursor-pointer">
                 <!-- Logo -->
                 <img src="https://i.postimg.cc/5tpJ1bLY/MY-L.png" alt="Namma Designs Logo" class="w-10 h-10">
-                    <path d="M14.5 10.5L32 53.5L23.5 10.5" stroke="#1a1a1a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M32 10.5L49.5 53.5L41 10.5" stroke="#1a1a1a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M34.875 10.5L44.125 32.5L34.875 53.5" stroke="#FFC700" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
                 <h1 class="text-2xl font-bold text-brand-dark">Namma <span class="text-brand-yellow">Designs</span></h1>
-            </div>
+            </a>
             <div class="hidden md:flex items-center space-x-8" id="desktop-nav">
                 <a href="#" class="nav-link text-gray-600 hover:text-brand-yellow transition duration-300 active" data-page="home">Home</a>
                 <a href="#" class="nav-link text-gray-600 hover:text-brand-yellow transition duration-300" data-page="about">About Us</a>
@@ -90,20 +87,20 @@
             <!-- Hero Section -->
             <section class="bg-white py-20 md:py-32">
                 <div class="container mx-auto px-6 text-center">
-                    <h2 class="text-4xl md:text-6xl font-extrabold text-brand-dark leading-tight">
-                        Professional <span class="text-brand-yellow">Graphic Design</span> Services
+                    <h2 class="text-4xl md:text-6xl font-extrabold text-brand-dark leading-tight h-32 md:h-48">
+                        <span id="typing-effect"></span>
                     </h2>
-                    <p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
+                    <p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto animate-on-scroll">
                         We bring your ideas to life with stunning visuals. From branding to social media, we do it all. Let's create something amazing together.
                     </p>
-                    <a href="#" class="nav-link mt-8 inline-block bg-brand-yellow text-brand-dark font-bold py-3 px-8 rounded-lg text-lg hover:bg-yellow-400 transition duration-300 transform hover:scale-105" data-page="contact">
+                    <a href="#" class="nav-link mt-8 inline-block bg-brand-yellow text-brand-dark font-bold py-3 px-8 rounded-lg text-lg hover:bg-yellow-400 transition duration-300 transform hover:scale-105 animate-on-scroll" data-page="contact">
                         Get a Free Quote
                     </a>
                 </div>
             </section>
 
             <!-- Stats Section -->
-            <section id="stats" class="bg-gray-50 py-12">
+            <section id="stats" class="bg-gray-50 py-12 animate-on-scroll">
                 <div class="container mx-auto px-6">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                         <div class="p-6 bg-white rounded-lg shadow-md">
@@ -115,7 +112,7 @@
                             <p class="mt-2 text-gray-600">Average Rating</p>
                         </div>
                         <div class="p-6 bg-white rounded-lg shadow-md">
-                            <h3 class="text-4xl font-bold text-brand-yellow" data-target="30">0+</h3>
+                            <h3 class="text-4xl font-bold text-brand-yellow" data-target="100">0+</h3>
                             <p class="mt-2 text-gray-600">Projects Completed</p>
                         </div>
                     </div>
@@ -123,7 +120,7 @@
             </section>
 
             <!-- Services Section -->
-            <section id="services" class="py-20 bg-white">
+            <section id="services" class="py-20 bg-white animate-on-scroll">
                 <div class="container mx-auto px-6">
                     <h2 class="text-3xl md:text-4xl font-bold text-center text-brand-dark mb-12">Our Services</h2>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -164,7 +161,7 @@
 
         <!-- About Us Page Content -->
         <div id="about" class="page-content hidden">
-            <section class="py-20 bg-white">
+            <section class="py-20 bg-white animate-on-scroll">
                 <div class="container mx-auto px-6">
                     <h2 class="text-3xl md:text-4xl font-bold text-center text-brand-dark mb-12">About Namma Designs</h2>
                     <div class="max-w-4xl mx-auto text-lg text-gray-600">
@@ -242,7 +239,7 @@
         // Initialize Feather Icons
         feather.replace();
 
-       // --- Page Navigation Logic ---
+        // --- Page Navigation Logic ---
         const pages = document.querySelectorAll('.page-content');
         const navLinks = document.querySelectorAll('.nav-link');
         const mobileNavLinks = document.querySelectorAll('.nav-link-mobile');
@@ -347,6 +344,7 @@
                 }
             }, stepTime);
         };
+
         // --- AJAX Contact Form Submission ---
         const contactForm = document.getElementById('contact-form');
         const successMessage = document.getElementById('success-message');
@@ -381,15 +379,7 @@
                 });
             });
         }
+
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
