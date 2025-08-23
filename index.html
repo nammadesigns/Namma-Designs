@@ -220,12 +220,13 @@
         // Initialize Feather Icons
         feather.replace();
 
-        // --- Page Navigation Logic ---
+       // --- Page Navigation Logic ---
         const pages = document.querySelectorAll('.page-content');
         const navLinks = document.querySelectorAll('.nav-link');
         const mobileNavLinks = document.querySelectorAll('.nav-link-mobile');
         const mobileMenu = document.getElementById('mobile-menu');
         const menuBtn = document.getElementById('menu-btn');
+        const logoLink = document.getElementById('logo-link');
 
         function showPage(pageId) {
             pages.forEach(page => page.classList.add('hidden'));
@@ -257,7 +258,7 @@
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
-
+        
         // --- Logo click to home ---
         if(logoLink) {
             logoLink.addEventListener('click', (e) => {
@@ -361,6 +362,7 @@
     </script>
 </body>
 </html>
+
 
 
 
