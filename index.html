@@ -112,7 +112,7 @@
                             <p class="mt-2 text-gray-600">Average Rating</p>
                         </div>
                         <div class="p-6 bg-white rounded-lg shadow-md">
-                            <h3 class="text-4xl font-bold text-brand-yellow" data-target="100">0+</h3>
+                            <h3 class="text-4xl font-bold text-brand-yellow" data-target="30">0+</h3>
                             <p class="mt-2 text-gray-600">Projects Completed</p>
                         </div>
                     </div>
@@ -236,58 +236,57 @@
     </footer>
 
     <script>
-        // Initialize Feather Icons
-        feather.replace();
-
-        // --- Page Navigation Logic ---
-        const pages = document.querySelectorAll('.page-content');
-        const navLinks = document.querySelectorAll('.nav-link');
-        const mobileNavLinks = document.querySelectorAll('.nav-link-mobile');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuBtn = document.getElementById('menu-btn');
-        const logoLink = document.getElementById('logo-link');
-
-        function showPage(pageId) {
-            pages.forEach(page => page.classList.add('hidden'));
-            const targetPage = document.getElementById(pageId);
-            if (targetPage) targetPage.classList.remove('hidden');
-            
-            navLinks.forEach(link => {
-                link.classList.toggle('active', link.dataset.page === pageId);
-            });
-            
-            window.scrollTo(0, 0);
-        }
-
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                showPage(link.dataset.page);
-            });
-        });
-
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                showPage(link.dataset.page);
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        // --- Logo click to home ---
-        if(logoLink) {
-            logoLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                showPage('home');
-            });
-        }
-
-        // --- Typing Effect ---
         document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Feather Icons
+            feather.replace();
+
+            // --- Page Navigation Logic ---
+            const pages = document.querySelectorAll('.page-content');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const mobileNavLinks = document.querySelectorAll('.nav-link-mobile');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuBtn = document.getElementById('menu-btn');
+            const logoLink = document.getElementById('logo-link');
+
+            function showPage(pageId) {
+                pages.forEach(page => page.classList.add('hidden'));
+                const targetPage = document.getElementById(pageId);
+                if (targetPage) targetPage.classList.remove('hidden');
+                
+                navLinks.forEach(link => {
+                    link.classList.toggle('active', link.dataset.page === pageId);
+                });
+                
+                window.scrollTo(0, 0);
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showPage(link.dataset.page);
+                });
+            });
+
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showPage(link.dataset.page);
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            if(logoLink) {
+                logoLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showPage('home');
+                });
+            }
+
+            // --- Typing Effect ---
             if(document.getElementById('typing-effect')) {
                 new Typed('#typing-effect', {
                     strings: ['Professional <span class="text-brand-yellow">Graphic Design</span> Services'],
@@ -298,54 +297,52 @@
                     cursorChar: '|',
                 });
             }
-        });
 
-        // --- Scroll and Counter Animations ---
-        const animatedElements = document.querySelectorAll('.animate-on-scroll');
-        const counters = document.querySelectorAll('h3[data-target]');
+            // --- Scroll and Counter Animations ---
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+            const counters = document.querySelectorAll('h3[data-target]');
 
-        const animationObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
+            const animationObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
 
-                    // If the intersecting element is the stats section, start counters
-                    if (entry.target.id === 'stats') {
-                        counters.forEach(counter => {
-                            if (!counter.dataset.animated) {
-                                startCounter(counter);
-                                counter.dataset.animated = 'true';
-                            }
-                        });
+                        if (entry.target.id === 'stats') {
+                            counters.forEach(counter => {
+                                if (!counter.dataset.animated) {
+                                    startCounter(counter);
+                                    counter.dataset.animated = 'true';
+                                }
+                            });
+                        }
+                        // We keep observing as pages can be hidden and shown again
                     }
-                    observer.unobserve(entry.target);
-                }
+                });
+            }, {
+                threshold: 0.1
             });
-        }, {
-            threshold: 0.1
-        });
 
-        animatedElements.forEach(el => {
-            animationObserver.observe(el);
-        });
+            animatedElements.forEach(el => {
+                animationObserver.observe(el);
+            });
 
-        const startCounter = (el) => {
-            const target = +el.dataset.target;
-            const duration = 2000;
-            const stepTime = Math.abs(Math.floor(duration / target));
-            let current = 0;
-            
-            const timer = setInterval(() => {
-                current++;
-                const originalContent = el.innerHTML.replace(/^\d+/, '');
-                el.innerHTML = current + originalContent;
-                if (current === target) {
-                    clearInterval(timer);
-                }
-            }, stepTime);
-        };
+            const startCounter = (el) => {
+                const target = +el.dataset.target;
+                const duration = 2000;
+                const stepTime = Math.abs(Math.floor(duration / target));
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current++;
+                    const originalContent = el.innerHTML.replace(/^\d+/, '');
+                    el.innerHTML = current + originalContent;
+                    if (current === target) {
+                        clearInterval(timer);
+                    }
+                }, stepTime);
+            };
 
-        // --- AJAX Contact Form Submission ---
+            // --- AJAX Contact Form Submission ---
         const contactForm = document.getElementById('contact-form');
         const successMessage = document.getElementById('success-message');
 
@@ -379,7 +376,7 @@
                 });
             });
         }
-
+        });
     </script>
 </body>
 </html>
