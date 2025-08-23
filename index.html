@@ -258,19 +258,65 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // --- Counting Animation Logic ---
-        const statsSection = document.getElementById('stats');
-        const counters = statsSection.querySelectorAll('h3[data-target]');
+        // --- Logo click to home ---
+        if(logoLink) {
+            logoLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                showPage('home');
+            });
+        }
+
+        // --- Typing Effect ---
+        document.addEventListener('DOMContentLoaded', function() {
+            if(document.getElementById('typing-effect')) {
+                new Typed('#typing-effect', {
+                    strings: ['Professional <span class="text-brand-yellow">Graphic Design</span> Services'],
+                    typeSpeed: 50,
+                    backSpeed: 25,
+                    loop: false,
+                    showCursor: true,
+                    cursorChar: '|',
+                });
+            }
+        });
+
+        // --- Scroll and Counter Animations ---
+        const animatedElements = document.querySelectorAll('.animate-on-scroll');
+        const counters = document.querySelectorAll('h3[data-target]');
+
+        const animationObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+
+                    // If the intersecting element is the stats section, start counters
+                    if (entry.target.id === 'stats') {
+                        counters.forEach(counter => {
+                            if (!counter.dataset.animated) {
+                                startCounter(counter);
+                                counter.dataset.animated = 'true';
+                            }
+                        });
+                    }
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        animatedElements.forEach(el => {
+            animationObserver.observe(el);
+        });
 
         const startCounter = (el) => {
             const target = +el.dataset.target;
-            const duration = 2000; // 2 seconds
+            const duration = 2000;
             const stepTime = Math.abs(Math.floor(duration / target));
             let current = 0;
             
             const timer = setInterval(() => {
                 current++;
-                // Retain original content like '+' or the star icon
                 const originalContent = el.innerHTML.replace(/^\d+/, '');
                 el.innerHTML = current + originalContent;
                 if (current === target) {
@@ -278,29 +324,6 @@
                 }
             }, stepTime);
         };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    counters.forEach(counter => {
-                        // Check if counter has already been animated
-                        if (!counter.dataset.animated) {
-                            startCounter(counter);
-                            counter.dataset.animated = 'true';
-                        }
-                    });
-                    // Optional: unobserve after animating
-                    // observer.unobserve(statsSection); 
-                }
-            });
-        }, {
-            threshold: 0.5 // Trigger when 50% of the element is visible
-        });
-
-        // Start observing the stats section
-        if (statsSection) {
-            observer.observe(statsSection);
-        }
         // --- AJAX Contact Form Submission ---
         const contactForm = document.getElementById('contact-form');
         const successMessage = document.getElementById('success-message');
@@ -338,6 +361,7 @@
     </script>
 </body>
 </html>
+
 
 
 
