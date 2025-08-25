@@ -3,21 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Namma Designs - Graphic Design Services</title>
+    <title>Namma Designs - Affordable Graphic Design Services</title>
     <link rel="icon" href="https://i.postimg.cc/V6RSbdpY/ND-logo.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ESLS4JMFVT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-ESLS4JMFVT');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ESLS4JMFVT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ESLS4JMFVT');
+    </script>
     <script src="https://unpkg.com/feather-icons"></script>
     <!-- Typed.js for typing effect -->
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
@@ -64,6 +63,14 @@
                 font-size: 2.5rem; /* Adjust for smaller screens */
             }
         }
+        /* Skill bar animation */
+        .skill-bar-fill {
+            transform: translateX(-100%);
+            transition: transform 1.5s ease-out;
+        }
+        .is-visible .skill-bar-fill {
+            transform: translateX(0);
+        }
     </style>
 </head>
 <body class="bg-white text-brand-dark">
@@ -105,8 +112,8 @@
                     <h2 class="text-4xl md:text-6xl font-extrabold text-brand-dark leading-tight h-32 md:h-48">
                         <span id="typing-effect"></span>
                     </h2>
-                    <p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto animate-on-scroll">
-                        We bring your ideas to life with stunning visuals. From branding to social media, we do it all. Let's create something amazing together.
+                    <p class="mt-6 text-lg text-gray-600 max-w-3xl mx-auto animate-on-scroll">
+                        We bring your ideas to life with stunning, professional designs at prices that won't break the bank. Let's create something amazing together.
                     </p>
                     <a href="#" class="nav-link mt-8 inline-block bg-brand-yellow text-brand-dark font-bold py-3 px-8 rounded-lg text-lg hover:bg-yellow-400 transition duration-300 transform hover:scale-105 animate-on-scroll" data-page="contact">
                         Get a Free Quote
@@ -114,60 +121,156 @@
                 </div>
             </section>
 
+            <!-- Why Choose Us Section -->
+            <section class="py-20 bg-gray-50 animate-on-scroll">
+                <div class="container mx-auto px-6 max-w-7xl">
+                    <h2 class="text-3xl md:text-4xl font-bold text-center text-brand-dark mb-12">Why Choose Namma Designs?</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                        <div class="bg-white p-8 rounded-lg shadow-lg">
+                            <i data-feather="dollar-sign" class="mx-auto h-12 w-12 text-brand-yellow mb-4"></i>
+                            <h3 class="text-2xl font-bold text-brand-dark mb-2">Affordable Pricing</h3>
+                            <p class="text-gray-600">Get top-quality graphic design services at a fraction of the cost of other agencies. We believe great design should be accessible to everyone.</p>
+                        </div>
+                        <div class="bg-white p-8 rounded-lg shadow-lg">
+                            <i data-feather="award" class="mx-auto h-12 w-12 text-brand-yellow mb-4"></i>
+                            <h3 class="text-2xl font-bold text-brand-dark mb-2">High-Quality Work</h3>
+                            <p class="text-gray-600">Our passion for design drives us to deliver exceptional, pixel-perfect results that make your brand look its best.</p>
+                        </div>
+                        <div class="bg-white p-8 rounded-lg shadow-lg">
+                            <i data-feather="users" class="mx-auto h-12 w-12 text-brand-yellow mb-4"></i>
+                            <h3 class="text-2xl font-bold text-brand-dark mb-2">Client-Focused</h3>
+                            <p class="text-gray-600">We work closely with you to understand your vision and ensure the final product is exactly what you dreamed of.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Stats Section -->
-            <section id="stats" class="bg-gray-50 py-12 animate-on-scroll">
+            <section id="stats" class="bg-white py-12 animate-on-scroll">
                 <div class="container mx-auto px-6 max-w-7xl">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                        <div class="p-6 bg-white rounded-lg shadow-md">
+                        <div class="p-6 bg-gray-50 rounded-lg shadow-md">
                             <h3 class="text-4xl font-bold text-brand-yellow" data-target="25">0+</h3>
                             <p class="mt-2 text-gray-600">Happy Clients</p>
                         </div>
-                        <div class="p-6 bg-white rounded-lg shadow-md">
+                        <div class="p-6 bg-gray-50 rounded-lg shadow-md">
                             <h3 class="text-4xl font-bold text-brand-yellow" data-target="5">0 <i data-feather="star" class="inline-block fill-current"></i></h3>
                             <p class="mt-2 text-gray-600">Average Rating</p>
                         </div>
-                        <div class="p-6 bg-white rounded-lg shadow-md">
+                        <div class="p-6 bg-gray-50 rounded-lg shadow-md">
                             <h3 class="text-4xl font-bold text-brand-yellow" data-target="30">0+</h3>
                             <p class="mt-2 text-gray-600">Projects Completed</p>
                         </div>
                     </div>
                 </div>
             </section>
+            
+            <!-- Portfolio Section -->
+            <section id="portfolio" class="py-20 bg-white animate-on-scroll">
+                <div class="container mx-auto px-6 max-w-7xl">
+                    <h2 class="text-3xl md:text-4xl font-bold text-center text-brand-dark mb-12">Our Work</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Portfolio Item 1 -->
+                        <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden group">
+                            <img src="https://placehold.co/600x400/FFC700/1a1a1a?text=Project+One" alt="Portfolio Project 1" class="w-full h-60 object-cover group-hover:scale-105 transition-transform duration-300">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-brand-dark">Brand Identity</h3>
+                                <p class="text-gray-600 mt-2">Complete branding package for a startup.</p>
+                            </div>
+                        </div>
+                        <!-- Portfolio Item 2 -->
+                        <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden group">
+                            <img src="https://placehold.co/600x400/1a1a1a/FFC700?text=Project+Two" alt="Portfolio Project 2" class="w-full h-60 object-cover group-hover:scale-105 transition-transform duration-300">
+                             <div class="p-6">
+                                <h3 class="text-xl font-bold text-brand-dark">Social Media Campaign</h3>
+                                <p class="text-gray-600 mt-2">Engaging visuals for an online marketing campaign.</p>
+                            </div>
+                        </div>
+                        <!-- Portfolio Item 3 -->
+                        <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden group">
+                            <img src="https://placehold.co/600x400/FFC700/1a1a1a?text=Project+Three" alt="Portfolio Project 3" class="w-full h-60 object-cover group-hover:scale-105 transition-transform duration-300">
+                             <div class="p-6">
+                                <h3 class="text-xl font-bold text-brand-dark">Invitation Design</h3>
+                                <p class="text-gray-600 mt-2">Custom wedding invitation card design.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <!-- Services Section -->
-            <section id="services" class="py-20 bg-white animate-on-scroll">
+            <section id="services" class="py-20 bg-gray-50 animate-on-scroll">
                 <div class="container mx-auto px-6 max-w-7xl">
                     <h2 class="text-3xl md:text-4xl font-bold text-center text-brand-dark mb-12">Our Services</h2>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <div class="bg-gray-50 p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition duration-300">
+                        <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition duration-300">
                             <div class="mb-4"><i data-feather="award" class="mx-auto h-12 w-12 text-brand-yellow"></i></div>
                             <h3 class="text-2xl font-bold text-brand-dark mb-2">Branding</h3>
                             <p class="text-gray-600">Crafting unique brand identities that stand out and tell your story.</p>
                         </div>
-                        <div class="bg-gray-50 p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition duration-300">
+                        <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition duration-300">
                             <div class="mb-4"><i data-feather="bar-chart-2" class="mx-auto h-12 w-12 text-brand-yellow"></i></div>
                             <h3 class="text-2xl font-bold text-brand-dark mb-2">Marketing Design</h3>
                             <p class="text-gray-600">Engaging designs for flyers, brochures, and ads that drive results.</p>
                         </div>
-                        <div class="bg-gray-50 p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition duration-300">
+                        <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition duration-300">
                             <div class="mb-4"><i data-feather="instagram" class="mx-auto h-12 w-12 text-brand-yellow"></i></div>
                             <h3 class="text-2xl font-bold text-brand-dark mb-2">Social Media Design</h3>
                             <p class="text-gray-600">Eye-catching posts, stories, and covers for your social channels.</p>
                         </div>
-                        <div class="bg-gray-50 p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition duration-300">
+                        <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition duration-300">
                             <div class="mb-4"><i data-feather="mail" class="mx-auto h-12 w-12 text-brand-yellow"></i></div>
                             <h3 class="text-2xl font-bold text-brand-dark mb-2">Invitation Cards</h3>
                             <p class="text-gray-600">Beautiful and custom invitations for any special occasion.</p>
                         </div>
-                        <div class="bg-gray-50 p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition duration-300">
+                        <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition duration-300">
                             <div class="mb-4"><i data-feather="airplay" class="mx-auto h-12 w-12 text-brand-yellow"></i></div>
                             <h3 class="text-2xl font-bold text-brand-dark mb-2">Presentation Slides</h3>
                             <p class="text-gray-600">Professional and compelling slides for your presentations.</p>
                         </div>
-                        <div class="bg-gray-50 p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition duration-300">
+                        <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition duration-300">
                             <div class="mb-4"><i data-feather="plus-circle" class="mx-auto h-12 w-12 text-brand-yellow"></i></div>
                             <h3 class="text-2xl font-bold text-brand-dark mb-2">& More</h3>
                             <p class="text-gray-600">Have a custom design need? We're here to help bring it to life.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Testimonials Section -->
+            <section id="testimonials" class="py-20 bg-white animate-on-scroll">
+                <div class="container mx-auto px-6 max-w-7xl">
+                    <h2 class="text-3xl md:text-4xl font-bold text-center text-brand-dark mb-12">What Our Clients Say</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-gray-50 p-8 rounded-lg shadow-lg">
+                            <p class="text-gray-600 mb-4">"Namma Designs delivered exactly what we needed, on time and on budget. Their creativity is unmatched. Highly recommended!"</p>
+                            <div class="flex items-center">
+                                <img src="https://placehold.co/48x48/cccccc/1a1a1a?text=A" alt="Client Avatar" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <p class="font-bold text-brand-dark">Alex Johnson</p>
+                                    <p class="text-sm text-gray-500">CEO of Startup Inc.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 p-8 rounded-lg shadow-lg">
+                            <p class="text-gray-600 mb-4">"The best prices for this level of quality! They transformed our social media presence with their amazing designs."</p>
+                            <div class="flex items-center">
+                                <img src="https://placehold.co/48x48/cccccc/1a1a1a?text=B" alt="Client Avatar" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <p class="font-bold text-brand-dark">Brenda Smith</p>
+                                    <p class="text-sm text-gray-500">Marketing Manager</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 p-8 rounded-lg shadow-lg">
+                            <p class="text-gray-600 mb-4">"Working with them was a breeze. Very professional, responsive, and the final product exceeded all my expectations."</p>
+                            <div class="flex items-center">
+                                <img src="https://placehold.co/48x48/cccccc/1a1a1a?text=C" alt="Client Avatar" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <p class="font-bold text-brand-dark">Chris Lee</p>
+                                    <p class="text-sm text-gray-500">Event Planner</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -189,6 +292,75 @@
                         <p>
                             At Namma Designs, your success is our success. We are dedicated to delivering high-quality work that exceeds expectations and drives results. Let's create something beautiful together.
                         </p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Our Skills Section -->
+            <section id="skills" class="py-20 bg-gray-50 animate-on-scroll">
+                <div class="container mx-auto px-6 max-w-7xl">
+                    <h2 class="text-3xl md:text-4xl font-bold text-center text-brand-dark mb-12">Our Skills</h2>
+                    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+                        <!-- Skill 1 -->
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-base font-medium text-brand-dark">Adobe Photoshop</span>
+                                <span class="text-sm font-medium text-brand-dark">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-brand-yellow h-2.5 rounded-full skill-bar-fill" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <!-- Skill 2 -->
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-base font-medium text-brand-dark">Adobe Illustrator</span>
+                                <span class="text-sm font-medium text-brand-dark">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-brand-yellow h-2.5 rounded-full skill-bar-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <!-- Skill 3 -->
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-base font-medium text-brand-dark">Canva</span>
+                                <span class="text-sm font-medium text-brand-dark">98%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-brand-yellow h-2.5 rounded-full skill-bar-fill" style="width: 98%"></div>
+                            </div>
+                        </div>
+                        <!-- Skill 4 -->
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-base font-medium text-brand-dark">Figma (UI/UX)</span>
+                                <span class="text-sm font-medium text-brand-dark">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-brand-yellow h-2.5 rounded-full skill-bar-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                         <!-- Skill 5 -->
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-base font-medium text-brand-dark">Branding & Identity</span>
+                                <span class="text-sm font-medium text-brand-dark">92%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-brand-yellow h-2.5 rounded-full skill-bar-fill" style="width: 92%"></div>
+                            </div>
+                        </div>
+                         <!-- Skill 6 -->
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-base font-medium text-brand-dark">Social Media Marketing</span>
+                                <span class="text-sm font-medium text-brand-dark">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-brand-yellow h-2.5 rounded-full skill-bar-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -236,6 +408,89 @@
                 </div>
             </section>
         </div>
+        
+        <!-- Dashboard Page Content (Prototype) -->
+        <div id="dashboard" class="page-content hidden">
+            <div class="bg-gray-100 min-h-screen">
+                <div class="container mx-auto px-6 py-10 max-w-7xl">
+                    <h1 class="text-3xl font-bold text-brand-dark mb-2">Admin Dashboard</h1>
+                    <p class="text-gray-600 mb-8">This is a static prototype. A real dashboard requires a backend server and database.</p>
+
+                    <!-- Analytics Section -->
+                    <section class="mb-10">
+                        <h2 class="text-2xl font-semibold text-brand-dark mb-4">Website Analytics</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <h3 class="text-gray-500 text-sm font-medium">Total Visitors</h3>
+                                <p class="text-3xl font-bold text-brand-dark mt-1">1,234</p>
+                                <p class="text-green-500 text-sm mt-1">+5% from last week</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <h3 class="text-gray-500 text-sm font-medium">Contact Form Submissions</h3>
+                                <p class="text-3xl font-bold text-brand-dark mt-1">56</p>
+                                <p class="text-green-500 text-sm mt-1">+10 from last week</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <h3 class="text-gray-500 text-sm font-medium">Page Views</h3>
+                                <p class="text-3xl font-bold text-brand-dark mt-1">4,567</p>
+                                <p class="text-red-500 text-sm mt-1">-2% from last week</p>
+                            </div>
+                        </div>
+                         <p class="text-xs text-gray-500 mt-4">Note: Data shown is for demonstration purposes. Integrate with a service like Google Analytics for real data.</p>
+                    </section>
+
+                    <!-- Manage Services Section -->
+                    <section class="mb-10">
+                        <h2 class="text-2xl font-semibold text-brand-dark mb-4">Manage Services</h2>
+                        <div class="bg-white p-8 rounded-lg shadow-md">
+                            <h3 class="text-xl font-bold text-brand-dark mb-4">Add a New Service</h3>
+                            <form>
+                                <div class="mb-4">
+                                    <label for="service-name" class="block text-gray-700 mb-2">Service Name</label>
+                                    <input type="text" id="service-name" class="w-full px-4 py-2 rounded-lg bg-gray-50 border border-gray-300 focus:outline-none focus:border-brand-yellow" placeholder="e.g., Logo Design">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="service-desc" class="block text-gray-700 mb-2">Description</label>
+                                    <textarea id="service-desc" rows="3" class="w-full px-4 py-2 rounded-lg bg-gray-50 border border-gray-300 focus:outline-none focus:border-brand-yellow" placeholder="Briefly describe the service."></textarea>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="service-icon" class="block text-gray-700 mb-2">Feather Icon Name</label>
+                                    <input type="text" id="service-icon" class="w-full px-4 py-2 rounded-lg bg-gray-50 border border-gray-300 focus:outline-none focus:border-brand-yellow" placeholder="e.g., 'edit-3'">
+                                </div>
+                                <button type="button" class="bg-brand-yellow text-brand-dark font-bold py-2 px-6 rounded-lg hover:bg-yellow-400 transition duration-300">Add Service</button>
+                            </form>
+                        </div>
+                    </section>
+                    
+                    <!-- Manage Testimonials Section -->
+                    <section>
+                        <h2 class="text-2xl font-semibold text-brand-dark mb-4">Manage Testimonials</h2>
+                        <div class="bg-white p-8 rounded-lg shadow-md">
+                             <h3 class="text-xl font-bold text-brand-dark mb-4">Add a New Testimonial</h3>
+                            <form>
+                                <div class="mb-4">
+                                    <label for="client-name" class="block text-gray-700 mb-2">Client Name</label>
+                                    <input type="text" id="client-name" class="w-full px-4 py-2 rounded-lg bg-gray-50 border border-gray-300 focus:outline-none focus:border-brand-yellow">
+                                </div>
+                                 <div class="mb-4">
+                                    <label for="client-title" class="block text-gray-700 mb-2">Client Title/Company</label>
+                                    <input type="text" id="client-title" class="w-full px-4 py-2 rounded-lg bg-gray-50 border border-gray-300 focus:outline-none focus:border-brand-yellow">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="client-feedback" class="block text-gray-700 mb-2">Feedback</label>
+                                    <textarea id="client-feedback" rows="3" class="w-full px-4 py-2 rounded-lg bg-gray-50 border border-gray-300 focus:outline-none focus:border-brand-yellow"></textarea>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="client-rating" class="block text-gray-700 mb-2">Rating (1-5)</label>
+                                    <input type="number" id="client-rating" min="1" max="5" class="w-full px-4 py-2 rounded-lg bg-gray-50 border border-gray-300 focus:outline-none focus:border-brand-yellow">
+                                </div>
+                                <button type="button" class="bg-brand-yellow text-brand-dark font-bold py-2 px-6 rounded-lg hover:bg-yellow-400 transition duration-300">Add Testimonial</button>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
     </main>
 
     <!-- Footer -->
@@ -247,6 +502,8 @@
                 <a href="https://youtube.com/@nammadesigns?si=6EEhi3TqPaiE1Brp" target="_blank" rel="noopener noreferrer" class="hover:text-brand-yellow transition duration-300"><i data-feather="youtube"></i></a>
             </div>
             <p>&copy; 2025 Namma Designs. All Rights Reserved.</p>
+            <!-- Hidden link to the dashboard prototype -->
+            <a href="#" class="nav-link text-xs text-gray-600 hover:text-gray-400" data-page="dashboard">Admin</a>
         </div>
     </footer>
 
@@ -273,6 +530,10 @@
                 });
                 
                 window.scrollTo(0, 0);
+                // Re-initialize feather icons if we are showing the dashboard
+                if(pageId === 'dashboard') {
+                    feather.replace();
+                }
             }
 
             navLinks.forEach(link => {
@@ -304,7 +565,7 @@
             // --- Typing Effect ---
             if(document.getElementById('typing-effect')) {
                 new Typed('#typing-effect', {
-                    strings: ['Professional <span class="text-brand-yellow">Graphic Design</span> Services'],
+                    strings: ['Affordable <span class="text-brand-yellow">Graphic Design</span> Services'],
                     typeSpeed: 50,
                     backSpeed: 25,
                     loop: false,
@@ -330,7 +591,7 @@
                                 }
                             });
                         }
-                        // We keep observing as pages can be hidden and shown again
+                         // We keep observing as pages can be hidden and shown again
                     }
                 });
             }, {
@@ -380,19 +641,36 @@
                             successMessage.classList.remove('hidden');
                             form.reset();
                         } else {
-                            alert('Oops! There was a problem submitting your form.');
+                            // Using a custom message box instead of alert
+                            showCustomAlert('Oops! There was a problem submitting your form.');
                         }
                     }).catch(error => {
-                        alert('Oops! There was a problem submitting your form.');
+                        showCustomAlert('Oops! There was a problem submitting your form.');
                         console.error('Form submission error:', error);
                     });
                 });
+            }
+
+            // --- Custom Alert Function (to avoid using browser's alert) ---
+            function showCustomAlert(message) {
+                // You can replace this with a more sophisticated modal/toast notification
+                const alertBox = document.createElement('div');
+                alertBox.style.position = 'fixed';
+                alertBox.style.top = '20px';
+                alertBox.style.right = '20px';
+                alertBox.style.padding = '16px';
+                alertBox.style.background = '#f8d7da';
+                alertBox.style.color = '#721c24';
+                alertBox.style.border = '1px solid #f5c6cb';
+                alertBox.style.borderRadius = '8px';
+                alertBox.style.zIndex = '1000';
+                alertBox.textContent = message;
+                document.body.appendChild(alertBox);
+                setTimeout(() => {
+                    alertBox.remove();
+                }, 3000);
             }
         });
     </script>
 </body>
 </html>
-
-
-
-
