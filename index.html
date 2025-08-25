@@ -502,8 +502,6 @@
                 <a href="https://youtube.com/@nammadesigns?si=6EEhi3TqPaiE1Brp" target="_blank" rel="noopener noreferrer" class="hover:text-brand-yellow transition duration-300"><i data-feather="youtube"></i></a>
             </div>
             <p>&copy; 2025 Namma Designs. All Rights Reserved.</p>
-            <!-- Hidden link to the dashboard prototype -->
-            <a href="#" class="nav-link text-xs text-gray-600 hover:text-gray-400" data-page="dashboard">Admin</a>
         </div>
     </footer>
 
@@ -555,12 +553,36 @@
                 mobileMenu.classList.toggle('hidden');
             });
             
-            if(logoLink) {
+            // --- Logo Click Logic (Home navigation + secret dashboard access) ---
+            let tapTimeout;
+            let tapCount = 0;
+            if (logoLink) {
                 logoLink.addEventListener('click', (e) => {
                     e.preventDefault();
-                    showPage('home');
+                    tapCount++;
+
+                    // Clear any previous timeout to reset the single-click timer
+                    clearTimeout(tapTimeout);
+
+                    // Set a new timeout
+                    tapTimeout = setTimeout(() => {
+                        if (tapCount === 1) {
+                            // If only one tap was detected in 300ms, navigate home
+                            showPage('home');
+                        }
+                        // Reset tap count after the delay
+                        tapCount = 0;
+                    }, 300); // 300ms window to detect multiple taps
+
+                    if (tapCount === 5) {
+                        // If 5 taps are reached, cancel the single-click timeout and show dashboard
+                        clearTimeout(tapTimeout);
+                        tapCount = 0;
+                        showPage('dashboard');
+                    }
                 });
             }
+
 
             // --- Typing Effect ---
             if(document.getElementById('typing-effect')) {
@@ -650,6 +672,15 @@
                     });
                 });
             }
+
+            // --- Keyboard shortcut for Admin Dashboard ---
+            document.addEventListener('keydown', function(e) {
+                // Check for Ctrl + Alt + D combination
+                if (e.ctrlKey && e.altKey && e.key === 'd') {
+                    e.preventDefault(); // Prevent any default browser action
+                    showPage('dashboard');
+                }
+            });
 
             // --- Custom Alert Function (to avoid using browser's alert) ---
             function showCustomAlert(message) {
